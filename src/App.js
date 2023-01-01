@@ -1,12 +1,15 @@
+import {useSelector} from "react-redux";
+
 const App = () => {
+    const {movie} = useSelector(state => state.movieReducer);
+    console.log(movie)
+    return (
+        <div>
 
-  return (
-      <div>
+            App component
 
-        App component
-
-      </div>
-  )
+        </div>
+    )
 };
 
 export {App};
