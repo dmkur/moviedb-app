@@ -1,38 +1,21 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { movieService } from "../../services/movie.service";
+import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-  movie: {},
-};
-
-const getAllMovies = createAsyncThunk(
-  "movieSLice/getAllMovies",
-  async (_, { rejectWithValue }) => {
-    try {
-      const { data } = await movieService.getAllMovies();
-      console.log(data);
-      return data;
-    } catch (e) {
-      return rejectWithValue(e.response.data);
-    }
-  }
-);
+    movie: {}
+}
 
 const movieSlice = createSlice({
-  name: "movieSLice",
-  initialState,
-  reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(getAllMovies.fulfilled, (state, action) => {
-      state.movie = action.payload;
-    });
-  },
+    name: 'movieSLice',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {}
 });
 
-const { reducer: movieReducer } = movieSlice;
+const {reducer: movieReducer} = movieSlice;
 
-const movieActions = {
-  getAllMovies,
-};
+const movieActions = {}
 
-export { movieActions, movieReducer };
+export {
+    movieActions,
+    movieReducer
+}
