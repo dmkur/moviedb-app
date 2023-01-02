@@ -1,10 +1,9 @@
 const App = () => {
-
-    return (
-        <div>
-            App component
-        </div>
-    )
+  return (
+    <div>
+      <div>App component !</div>
+    </div>
+  );
 };
 
-export {App};
+export { App };
