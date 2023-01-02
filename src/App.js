@@ -1,10 +1,10 @@
 const App = () => {
-  console.log("hello");
-  return (
-    <div>
-      <div>App component !</div>
-    </div>
-  );
+
+    return (
+        <div>
+            App component
+        </div>
+    )
 };
 
-export { App };
+export {App};
