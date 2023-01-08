@@ -24,3 +24,7 @@ yarn-error.log*
 /.idea/misc.xml
 /.idea/vcs.xml
 /.idea/workspace.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/moviedb-app.iml
+/.idea/.gitignore
