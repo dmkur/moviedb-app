@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 const MoviesListCard = ({movie}) => {
     const {
         original_title,
@@ -9,11 +11,11 @@ const MoviesListCard = ({movie}) => {
 
     } = movie
     return (
-        <div>
+        <Link to={`/movie/${movie.id}`}>
             <div>{original_title}</div>
             <div><img src={poster_path} alt={'p'}/></div>
             <hr/>
-        </div>
+        </Link>
     )
 };
 
