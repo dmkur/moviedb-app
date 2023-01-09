@@ -3,16 +3,16 @@ import {movieService} from "../../services";
 
 const initialState = {
     movies: [],
-    next: null,
-    prev: null,
-    error: null
+    page: null,
+    error: null,
+    totalPages:null
 }
 
 const getAll = createAsyncThunk(
     'movieSlice/getAll',
-    async (_, {rejectWithValue}) => {
+    async (params, {rejectWithValue}) => {
         try {
-            const {data} = await movieService.getAll()
+            const {data} = await movieService.getAll(params)
             console.log(data, 'from movieSlice/getAll_____________')
             return data
         } catch (e) {
@@ -29,8 +29,9 @@ const movieSlice = createSlice({
         builder
             .addCase(getAll.fulfilled, (state, action) => {
                 state.movies = action.payload.results
-                state.next = action.payload.next
-                state.prev = action.payload.prev
+                state.page = action.payload.page
+                state.totalPages = action.payload.total_pages
+
             })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
